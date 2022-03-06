@@ -27,7 +27,6 @@ body {
 .main {
   margin: 1rem;
   border-radius: 0.7rem;
-
   display: grid;
   width: 330px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -40,7 +39,6 @@ body {
 
 .section {
   min-height: 444px;
-
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -54,6 +52,13 @@ body {
     background-color: $brightOrange;
     border-top-left-radius: 0.7rem;
     border-top-right-radius: 0.7rem;
+
+    @include desktop() {
+      @include desktop() {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
 
     .section_ctabtn {
       color: $brightOrange;
@@ -70,6 +75,11 @@ body {
     background-color: $veryDarkCyan;
     border-bottom-left-radius: 0.7rem;
     border-bottom-right-radius: 0.7rem;
+
+    @include desktop() {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
     .section_ctabtn {
       color: $veryDarkCyan;
