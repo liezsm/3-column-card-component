@@ -14,45 +14,107 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 .main {
-  border: 2px solid red;
+  margin: 1rem;
+  border-radius: 0.7rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: ()[1];
-      grid-template-columns: repeat(1);
+  width: 330px;
   -ms-grid-columns: (minmax(240px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.main > * {
-  border: 2px solid green;
+@media (min-width: 769px) {
+  .main {
+    width: 90vw;
+    overflow: hidden;
+  }
 }
 
 .section {
-  height: 444px;
+  min-height: 444px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media (min-width: 769px) {
   .section {
-    height: 497px;
+    min-height: 497px;
+    height: auto;
   }
 }
 
 .section:first-child {
   background-color: #e38826;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.section:first-child .section_ctabtn {
+  color: #e38826;
 }
 
 .section:nth-child(2) {
   background-color: #006970;
 }
 
+.section:nth-child(2) .section_ctabtn {
+  color: #006970;
+}
+
 .section:last-child {
   background-color: #004241;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+
+.section:last-child .section_ctabtn {
+  color: #004241;
+}
+
+.section_logo {
+  width: 75px;
+  margin-bottom: 36px;
 }
 
 .section_title {
   font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f2f2f2;
+  font-size: 36px;
+  margin-bottom: 36px;
+}
+
+.section_desp {
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  padding-right: 3rem;
+  word-spacing: 5px;
+  margin-bottom: 28px;
+}
+
+.section_ctabtn {
+  width: 145px;
+  outline: none;
+  background-color: #f2f2f2;
+  border-radius: 1.7rem;
+  padding: 20px 30px;
+}
+
+.section_ctabtn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

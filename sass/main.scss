@@ -20,36 +20,95 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
+  font-size: $fontSize;
+  font-family: $lexend;
 }
 
 .main {
-  border: 2px solid red;
+  margin: 1rem;
+  border-radius: 0.7rem;
+
   display: grid;
-  grid-template-columns: repeat(1);
+  width: 330px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-  & > * {
-    border: 2px solid green;
+  @include desktop() {
+    width: 90vw;
+    overflow: hidden;
   }
 }
 
 .section {
-  height: 444px;
+  min-height: 444px;
+
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
 
   @include desktop() {
-    height: 497px;
+    min-height: 497px;
+    height: auto;
   }
 
   &:first-child {
     background-color: $brightOrange;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+
+    .section_ctabtn {
+      color: $brightOrange;
+    }
   }
   &:nth-child(2) {
     background-color: $darkCyan;
+
+    .section_ctabtn {
+      color: $darkCyan;
+    }
   }
   &:last-child {
     background-color: $veryDarkCyan;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+
+    .section_ctabtn {
+      color: $veryDarkCyan;
+    }
   }
+
+  &_logo {
+    width: 75px;
+    margin-bottom: 36px;
+  }
+
   &_title {
     font-family: $bigShoulder;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $veryLightGray;
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+
+  &_desp {
+    line-height: 1.5;
+    color: $paragraph;
+    padding-right: 3rem;
+    word-spacing: 5px;
+    margin-bottom: 28px;
+  }
+  &_ctabtn {
+    width: 145px;
+    outline: none;
+
+    background-color: $veryLightGray;
+    border-radius: 1.7rem;
+    padding: 20px 30px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: #fff;
+    }
   }
 }
