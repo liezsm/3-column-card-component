@@ -1,0 +1,55 @@
+// -lexend deca
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+// -big shoulder
+
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+
+@import "variables";
+@import "media";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $veryLightGray;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.main {
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(1);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  & > * {
+    border: 2px solid green;
+  }
+}
+
+.section {
+  height: 444px;
+
+  @include desktop() {
+    height: 497px;
+  }
+
+  &:first-child {
+    background-color: $brightOrange;
+  }
+  &:nth-child(2) {
+    background-color: $darkCyan;
+  }
+  &:last-child {
+    background-color: $veryDarkCyan;
+  }
+  &_title {
+    font-family: $bigShoulder;
+  }
+}
